@@ -48,12 +48,15 @@ public class UserHelper extends BaseHelper {
         click(By.id("register-button"));
     }
 
-    public boolean isRegistrationSuccess() {
-        return isElementPresent(By.cssSelector(".result"));
-    }
-    public  boolean isLoginSuccess(){
+    //public boolean isRegistrationSuccess() {
+    //    return isElementPresent(By.cssSelector(".result"));
+    //}
+    public boolean isSignOutButtonPresent() {
         return isElementPresent(By.cssSelector("[href='/logout']"));
     }
+    //public  boolean isLoginSuccess(){
+    //    return isElementPresent(By.cssSelector("[href='/logout']"));
+    //}
     public boolean isHomeComponentPresent() {
         return isElementPresent(By.cssSelector(".header-links"));
     }

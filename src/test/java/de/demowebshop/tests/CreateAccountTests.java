@@ -17,6 +17,6 @@ public class CreateAccountTests extends TestBase {
         app.getUser().fillRegistrationForm(email, "Aa12345!");
         app.getUser().submitRegistration();
 
-        Assert.assertTrue(app.getUser().isRegistrationSuccess());
+        Assert.assertTrue(app.getUser().isSignOutButtonPresent());
     }
 }

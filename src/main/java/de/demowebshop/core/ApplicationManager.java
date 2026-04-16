@@ -11,6 +11,8 @@ public class ApplicationManager {
     UserHelper user;
     ItemHelper item;
 
+
+
     // запуск браузера
     public void init() {
         WebDriverManager.chromedriver().setup();

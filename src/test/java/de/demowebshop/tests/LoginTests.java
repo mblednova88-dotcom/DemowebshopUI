@@ -1,4 +1,4 @@
-package de.demowebshop;
+package de.demowebshop.tests;
 
 import de.demowebshop.core.TestBase;
 import org.testng.Assert;
@@ -13,6 +13,6 @@ public class LoginTests extends TestBase {
         app.getUser().fillLoginForm("mariulka88@mail.ru", "Aa12345!");
         app.getUser().submitLogin();
 
-        Assert.assertTrue(app.getUser().isLoginSuccess());
+        Assert.assertTrue(app.getUser().isSignOutButtonPresent());
     }
 }

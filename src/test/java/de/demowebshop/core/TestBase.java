@@ -1,12 +1,14 @@
 package de.demowebshop.core;
 
 import de.demowebshop.core.ApplicationManager;
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
 
-    protected ApplicationManager app = new ApplicationManager();
+    protected static ApplicationManager app = new ApplicationManager();
+
 
     @BeforeMethod
     public void setUp() {
