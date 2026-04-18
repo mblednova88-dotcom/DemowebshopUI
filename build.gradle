@@ -15,33 +15,19 @@ dependencies {
 
 
     implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+    implementation("ch.qos.logback:logback-classic:1.5.32")
 }
+
+
 test {
     useTestNG()
+    systemProperty "browser", System.getProperty("browser", "chrome")
 }
 
-task qa(type: Test){
+// ./gradlew testEdge
+task testEdge(type: Test) {
     useTestNG()
-    testClassesDirs = sourceSets.test.output.classesDirs
-    classpath = sourceSets.test.runtimeClasspath
-    if(project.hasProperty('browser')){
-        systemProperty 'browser',"${browser}"
-    }
-
-}
-//new
-def registerTask(String taskName,String suitePath){
-    tasks.register(taskName,Test){
-        useTestNG(){
-            suites suitePath
-        }
-        testClassesDirs = sourceSets.test.output.classesDirs
-        classpath = sourceSets.test.runtimeClasspath
-        if(project.hasProperty('browser')){
-            systemProperty 'browser',"${browser}"
-        }
-    }
+    systemProperty "browser", "edge"
 }
 
-registerTask('quick','src/test/resources/quick.xml')
-registerTask('regression','src/test/resources/regression.xml')
+

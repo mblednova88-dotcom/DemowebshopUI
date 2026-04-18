@@ -10,9 +10,16 @@ public class ItemHelper extends BaseHelper {
         super(driver);
     }
 
+    // FIX: На странице категории у товаров нет прямой кнопки "Add to cart" в списке —
+    // нужно зайти на страницу конкретного товара и там нажать кнопку.
+    // Переходим в Books, кликаем на второй товар, добавляем со страницы товара.
+    public void openBooksCategory() {
+        driver.get("https://demowebshop.tricentis.com/books");
+    }
 
     public void addSecondItemToCart() {
-        click(By.cssSelector(".product-item:nth-child(2) .product-box-add-to-cart-button"));
+        driver.get("https://demowebshop.tricentis.com/computing-and-internet");
+        click(By.cssSelector(".add-to-cart-button"));
     }
 
 
@@ -20,10 +27,7 @@ public class ItemHelper extends BaseHelper {
         click(By.cssSelector("[href='/cart']"));
     }
 
-
     public boolean isItemInCart() {
         return isElementPresent(By.cssSelector(".cart-item-row"));
     }
-
-    }
-
+}

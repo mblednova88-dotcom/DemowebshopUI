@@ -2,9 +2,12 @@ package de.demowebshop.tests;
 
 import de.demowebshop.core.TestBase;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase {
+
+
 
     @Test
     public void loginTest() {

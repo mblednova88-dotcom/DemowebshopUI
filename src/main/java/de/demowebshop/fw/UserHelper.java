@@ -34,11 +34,15 @@ public class UserHelper extends BaseHelper {
         type(By.name("ConfirmPassword"), password);
         click(By.id("register-button"));
     }
+
     public void openRegister() {
         click(By.cssSelector("[href='/register']"));
     }
 
     public void fillRegistrationForm(String email, String password) {
+        click(By.id("gender-female"));
+        type(By.name("FirstName"), "Marina");
+        type(By.name("LastName"), "Test");
         type(By.name("Email"), email);
         type(By.name("Password"), password);
         type(By.name("ConfirmPassword"), password);
@@ -50,14 +54,28 @@ public class UserHelper extends BaseHelper {
 
     //public boolean isRegistrationSuccess() {
     //    return isElementPresent(By.cssSelector(".result"));
-    //}
+    //
     public boolean isSignOutButtonPresent() {
         return isElementPresent(By.cssSelector("[href='/logout']"));
     }
+
     //public  boolean isLoginSuccess(){
     //    return isElementPresent(By.cssSelector("[href='/logout']"));
     //}
     public boolean isHomeComponentPresent() {
         return isElementPresent(By.cssSelector(".header-links"));
     }
-}
+
+
+    public void clickOnLoginLink() {
+        click(By.cssSelector(".ico-login"));}
+
+        public boolean isLoginLinkPresent() {
+            return isElementPresent(By.cssSelector("[href='/login']"));
+        }
+
+    public void clickOnSignOutButton() {
+        click(By.cssSelector("[href='/logout']"));
+    }
+    }
+
