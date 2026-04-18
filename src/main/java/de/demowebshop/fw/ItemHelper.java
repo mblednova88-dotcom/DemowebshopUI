@@ -10,9 +10,7 @@ public class ItemHelper extends BaseHelper {
         super(driver);
     }
 
-    // FIX: На странице категории у товаров нет прямой кнопки "Add to cart" в списке —
-    // нужно зайти на страницу конкретного товара и там нажать кнопку.
-    // Переходим в Books, кликаем на второй товар, добавляем со страницы товара.
+
     public void openBooksCategory() {
         driver.get("https://demowebshop.tricentis.com/books");
     }

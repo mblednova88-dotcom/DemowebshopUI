@@ -16,7 +16,7 @@ public class ItemTests extends TestBase {
 
     @Test
     public void addItemToCartTest() {
-        // addSecondItemToCart сам переходит в Books и открывает страницу товара
+
         app.getItem().addSecondItemToCart();
         app.getItem().openCart();
 
